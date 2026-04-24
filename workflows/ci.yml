@@ -1,20 +1,21 @@
-name: CI test
+name: CI for project
 
 on:
   push:
     branches: [ main ]
-  pull_request: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  job_1:
+  hello-world:
     runs-on: ubuntu-latest
-
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
-    - name: Print job
-      run: echo "This is job_1"
-
-    - name: Print date
-    run: date
+      
+    - name: Say Hello
+      run: echo "Hello, GitHub Actions! This is my first workflow!"
+      
+    - name: Show date
+      run: date
