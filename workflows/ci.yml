@@ -1,0 +1,20 @@
+name: CI test
+
+on:
+    push:
+        branches: [ main ]
+    pull_request: [ main ]
+
+jobs:
+    job_1:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout code
+          uses actions/checkout@v3
+
+        - name: Print job name
+          run: echo "This is job_1"
+
+        - name: Print date
+          run: date
